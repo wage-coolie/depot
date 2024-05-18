@@ -12,8 +12,22 @@
   </head>
 
   <body>
-    <main class="container mx-auto mt-28 px-5 flex">
-      <%= yield %>
-    </main>
+  	<header class="bg-green-700">
+			<%= image_tag "logo.svg", alt: "Bahinchod", style: 'max-width: 100px' %>
+  		<h1><%= @page_title %></h1>
+  	</header>
+  	<secttion class="flex" style="height: 100vh">
+  		<nav class="bg-green-900 p-6">
+  			<ul class="text-grey-300 leading-8">
+  				<li><a href="/">Home</a></li>
+  				<li><a href="/question">Question</a></li>
+  				<li><a href="/news">News</a></li>
+  				<li><a href="/contact">Contact</a></li>
+  			</ul>
+  		</nav>
+	    <main class="container mx-auto mt-28 px-5 flex">
+	      <%= yield %>
+	    </main>
+  	</secttion>
   </body>
 </html>

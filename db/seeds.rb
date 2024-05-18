@@ -7,7 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 # Product.delete_all
 Product.create!(
-  title: 'Design and Build Great Web APIs',
+  title: 'Design and Build Great Web APIs (1)',
 	description:
 		%{<p>
 		<em>Robust, Reliable, and Resilient</em>
