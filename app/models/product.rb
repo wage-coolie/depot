@@ -11,6 +11,7 @@ class Product < ApplicationRecord
 		message: 'Has to be a url for GIF, PNG or JPG'
 	}
 
+
 	private
 
 	def ensure_not_referenced_by_any_line_item
