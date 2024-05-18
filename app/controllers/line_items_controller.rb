@@ -25,10 +25,17 @@ class LineItemsController < ApplicationController
   def create
   	product = Product.find_by(id: params[:product_id])
   	@line_item = @cart.add_product(product)
-1
     respond_to do |format|
       if @line_item.save
-        format.html { redirect_to cart_url(@line_item.cart), notice: "Item added." }
+  		 	format.turbo_stream { @current_item = @line_item }
+  		 	#do
+      	# 	render turbo_stream: turbo_stream.replace(
+      	# 		:"cart_#{@cart.id.to_s}",
+      	# 		partial: 'layouts/cart',
+      	# 		locals: {cart: @cart},
+      	# 	)
+      	# end
+        format.html { redirect_to store_index_url, notice: "Item added." }
         format.json { render :show, status: :created, location: @line_item }
       else
         format.html { render :new, status: :unprocessable_entity }
