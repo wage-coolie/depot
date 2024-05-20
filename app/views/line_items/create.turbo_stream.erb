@@ -1,0 +1,19 @@
+<%# <%= turbo_stream.replace(
+		target: :notice,
+		partial: 'store/index',
+		locals: { notice: @notice },
+) %>
+
+<%#= turbo_stream.replace(
+		target: :carts,
+		partial: 'layouts/cart',
+		locals: { cart: @cart },
+) %>
+
+<%= turbo_stream.replace 'notice' do %>
+  <%= render partial: 'store/notice', locals: {notice: @notice } %>
+<% end %>
+
+<%= turbo_stream.replace 'cart' do %>
+  <%= render partial: 'layouts/cart', locals: {cart: @cart} %>
+<% end %>

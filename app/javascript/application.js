@@ -28,3 +28,4 @@ document.addEventListener("turbo:before-stream-render", function(event) {
     }
   }
 })
+import "channels"
