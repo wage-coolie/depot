@@ -12,6 +12,9 @@
   </head>
 
   <body>
+    <% if Rails.env.development? %>
+      <%= RailsSpotlight::RenderViewReporter.report_rendered_view_locals(self, locals: local_assigns, params: params, skip_vars: %i[current_template], metadata: { just_test: 'Works' }) %>
+    <% end %>
   	<header class="bg-green-700">
 			<%= image_tag "logo.svg", alt: "Bahinchod", style: 'max-width: 100px' %>
   		<h1><%= @page_title %></h1>
